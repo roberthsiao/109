@@ -897,7 +897,7 @@ const scriptURL = 'https://script.google.com/macros/s/AKfycbzz_1WWyR4C88WHwIuDZx
 document.getElementById('contact-form').addEventListener('submit', function (e) {
   e.preventDefault();
 
-  ['name', 'line', 'phone', 'message', 'agree'].forEach(id => {
+  ['name', 'phone', 'line', 'message', 'agree'].forEach(id => {
     document.getElementById(`error-${id}`).classList.add('hidden');
     document.getElementById(`error-${id}`).textContent = '';
   });
