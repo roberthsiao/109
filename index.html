@@ -861,9 +861,12 @@ if (window.scrollY > 50) {
 
         <!-- 個資同意 -->
         <div class="mb-6">
-          <label class="inline-flex items-center">
+          <label for="agree" class="inline-flex items-center">
             <input type="checkbox" id="agree" class="form-checkbox h-4 w-4 text-[#005655]">
-            <p><span class="text-sm text-gray-500">　我同意<a href="privacy.html" target="_blank" class="underline text-sm text-gray-500 ml-1">個資聲明</a></span></p>
+            <span class="ml-2 text-sm font-semibold text-[#2c3e4e]">
+              我同意
+              <a href="privacy.html" target="_blank" class="underline text-[#005655] ml-1">個資聲明</a>
+            </span>
           </label>
           <p class="text-red-500 text-sm mt-1 hidden" id="error-agree"></p>
         </div>
@@ -913,7 +916,7 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
     valid = false;
   }
 
-  if (!phone || !/^09\\d{8}$/.test(phone)) {
+  if (!phone || !/^09\d{8}$/.test(phone)) {
     document.getElementById('error-phone').textContent = '請輸入正確的手機號碼（例如：0912345678）';
     document.getElementById('error-phone').classList.remove('hidden');
     valid = false;
@@ -956,6 +959,7 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
   });
 });
 </script>
+
 
 
 
