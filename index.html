@@ -826,63 +826,65 @@ if (window.scrollY > 50) {
       </div>
     </div>
 
-<!-- 留言表單區塊 -->
-<div class="bg-white p-6 rounded-lg shadow-md text-gray-700 max-w-4xl mx-auto">
-  <h3 class="text-2xl font-bold mb-4 border-b pb-2 text-left">屋主自售</h3>
-  <form id="contact-form" name="contact-form" class="text-left">
+    <!-- 留言表單區塊 -->
+    <div class="bg-white p-6 rounded-lg shadow-md text-gray-700 max-w-4xl mx-auto">
+      <h3 class="text-2xl font-bold mb-4 border-b pb-2 text-left">屋主自售</h3>
+      <form id="contact-form" name="contact-form" class="text-left">
 
-    <!-- 姓名 -->
-    <div class="mb-4">
-      <input type="text" name="name" id="name" placeholder="您的姓名"
-             class="w-full px-4 py-2 border border-gray-300 rounded-md">
-      <p class="text-red-500 text-sm mt-1 hidden" id="error-name"></p>
+        <!-- 姓名（必填） -->
+        <div class="mb-4">
+          <input type="text" name="name" id="name" placeholder="您的姓名（必填）"
+                 class="w-full px-4 py-2 border border-gray-300 rounded-md">
+          <p class="text-red-500 text-sm mt-1 hidden" id="error-name"></p>
+        </div>
+
+        <!-- 手機號碼（必填） -->
+        <div class="mb-4">
+          <input type="tel" name="phone" id="phone" placeholder="您的手機號碼（必填）"
+                 class="w-full px-4 py-2 border border-gray-300 rounded-md">
+          <p class="text-red-500 text-sm mt-1 hidden" id="error-phone"></p>
+        </div>
+
+        <!-- LINE（選填） -->
+        <div class="mb-4">
+          <input type="text" name="line" id="line" placeholder="您的 LINE 帳號（選填）"
+                 class="w-full px-4 py-2 border border-gray-300 rounded-md">
+          <p class="text-red-500 text-sm mt-1 hidden" id="error-line"></p>
+        </div>
+
+        <!-- 訊息（選填） -->
+        <div class="mb-4">
+          <textarea name="message" id="message" placeholder="適合看屋時間／其他問題（選填）" rows="4"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md"></textarea>
+          <p class="text-red-500 text-sm mt-1 hidden" id="error-message"></p>
+        </div>
+
+        <!-- 個資同意 -->
+        <div class="mb-6">
+          <label class="inline-flex items-center">
+            <input type="checkbox" id="agree" class="form-checkbox h-4 w-4 text-[#005655]">
+            <span class="ml-2 text-sm">我同意<a href="privacy.html" target="_blank" class="underline text-[#005655] ml-1">個資聲明</a></span>
+          </label>
+          <p class="text-red-500 text-sm mt-1 hidden" id="error-agree"></p>
+        </div>
+
+        <!-- reCAPTCHA 驗證 -->
+        <div class="g-recaptcha mb-6" data-sitekey="6LcQIZUrAAAAAIy675cQ2B9tbPmzji6QM4Dg8B_K"></div>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+        <!-- 按鈕置中 -->
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+          <button type="submit"
+                  class="bg-[#66665f] hover:bg-[#005655] text-white font-semibold px-6 py-3 rounded-full transition">
+            與屋主連絡
+          </button>
+          <a href="https://market.591.com.tw/104341" target="_blank"
+             class="bg-[#66665f] hover:bg-[#005655] text-white font-semibold px-6 py-3 rounded-full transition">
+            我想找仲介
+          </a>
+        </div>
+      </form>
     </div>
-
-    <!-- Email -->
-    <div class="mb-4">
-      <input type="email" name="email" id="email" placeholder="您的 Email"
-             class="w-full px-4 py-2 border border-gray-300 rounded-md">
-      <p class="text-red-500 text-sm mt-1 hidden" id="error-email"></p>
-    </div>
-
-    <!-- LINE -->
-    <div class="mb-4">
-      <input type="text" name="line" id="line" placeholder="您的 LINE 帳號"
-             class="w-full px-4 py-2 border border-gray-300 rounded-md">
-      <p class="text-red-500 text-sm mt-1 hidden" id="error-line"></p>
-    </div>
-
-    <!-- 手機 -->
-    <div class="mb-4">
-      <input type="tel" name="phone" id="phone" placeholder="您的手機號碼"
-             class="w-full px-4 py-2 border border-gray-300 rounded-md">
-      <p class="text-red-500 text-sm mt-1 hidden" id="error-phone"></p>
-    </div>
-
-    <!-- 訊息 -->
-    <div class="mb-6">
-      <textarea name="message" id="message" placeholder="適合看屋時間／其他問題" rows="4"
-                class="w-full px-4 py-2 border border-gray-300 rounded-md"></textarea>
-      <p class="text-red-500 text-sm mt-1 hidden" id="error-message"></p>
-    </div>
-
-    <!-- reCAPTCHA 驗證 -->
-    <div class="g-recaptcha mb-6" data-sitekey="6LcQIZUrAAAAAIy675cQ2B9tbPmzji6QM4Dg8B_K"></div>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-    <!-- 按鈕置中 -->
-    <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-      <button type="submit"
-              class="bg-[#66665f] hover:bg-[#005655] text-white font-semibold px-6 py-3 rounded-full transition">
-        與屋主連絡
-      </button>
-      <a href="https://market.591.com.tw/104341" target="_blank"
-         class="bg-[#66665f] hover:bg-[#005655] text-white font-semibold px-6 py-3 rounded-full transition">
-        我想找仲介
-      </a>
-    </div>
-  </form>
-</div>
 </section>
 
 <!-- 驗證 + 提交腳本 -->
@@ -892,55 +894,40 @@ const scriptURL = 'https://script.google.com/macros/s/AKfycbxOQhQZDdmxVYHCTcDQxg
 document.getElementById('contact-form').addEventListener('submit', function (e) {
   e.preventDefault();
 
-  // 清除錯誤訊息
-  ['name', 'email', 'line', 'phone', 'message'].forEach(id => {
+  ['name', 'line', 'phone', 'message', 'agree'].forEach(id => {
     document.getElementById(`error-${id}`).classList.add('hidden');
     document.getElementById(`error-${id}`).textContent = '';
   });
 
   const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const line = document.getElementById('line').value.trim();
   const phone = document.getElementById('phone').value.trim();
+  const line = document.getElementById('line').value.trim();
   const message = document.getElementById('message').value.trim();
+  const agree = document.getElementById('agree').checked;
 
   let valid = true;
 
-  // 驗證規則
   if (!name) {
     document.getElementById('error-name').textContent = '請輸入姓名';
     document.getElementById('error-name').classList.remove('hidden');
     valid = false;
   }
 
-  if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
-    document.getElementById('error-email').textContent = '請輸入正確的 Email 格式';
-    document.getElementById('error-email').classList.remove('hidden');
-    valid = false;
-  }
-
-  if (!line || !/^[a-zA-Z0-9_.-]{2,30}$/.test(line)) {
-    document.getElementById('error-line').textContent = '請輸入正確的 LINE ID（限英數與符號 -_.）';
-    document.getElementById('error-line').classList.remove('hidden');
-    valid = false;
-  }
-
-  if (!phone || !/^09\d{8}$/.test(phone)) {
+  if (!phone || !/^09\\d{8}$/.test(phone)) {
     document.getElementById('error-phone').textContent = '請輸入正確的手機號碼（例如：0912345678）';
     document.getElementById('error-phone').classList.remove('hidden');
     valid = false;
   }
 
-  if (!message) {
-    document.getElementById('error-message').textContent = '請填寫留言內容';
-    document.getElementById('error-message').classList.remove('hidden');
+  if (!agree) {
+    document.getElementById('error-agree').textContent = '請勾選同意個資聲明';
+    document.getElementById('error-agree').classList.remove('hidden');
     valid = false;
   }
 
-  // reCAPTCHA 驗證
   const recaptchaResponse = grecaptcha.getResponse();
   if (!recaptchaResponse) {
-    alert("請先通過『我不是機器人』驗證");
+    alert('請先通過「我不是機器人」驗證');
     valid = false;
   }
 
@@ -948,7 +935,7 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
 
   const form = document.forms['contact-form'];
   const formData = new FormData(form);
-  formData.append("g-recaptcha-response", recaptchaResponse);
+  formData.append('g-recaptcha-response', recaptchaResponse);
 
   fetch(scriptURL, {
     method: 'POST',
@@ -956,7 +943,7 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
   })
   .then(response => {
     if (response.ok) {
-      alert("已送出，請靜候連絡！");
+      alert('已送出，請靜候連絡！');
       form.reset();
       grecaptcha.reset();
     } else {
@@ -964,7 +951,7 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
     }
   })
   .catch(error => {
-    alert("系統忙碌中，請稍候再試！");
+    alert('系統忙碌中，請稍候再試！');
     console.error('錯誤訊息：', error);
   });
 });
